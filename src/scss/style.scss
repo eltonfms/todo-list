@@ -1,12 +1,69 @@
-.card {
-  background-color: red;
+/*!
+ * TODO List Compras da Manhã
+ * @author Elton Silveira
+ * @email eltonfms@gmail.com
+ * Copyright 2018
+ */
+$cor-vermelho:#ff5252; 
+$cor-azul:#03A0FF;
+$cor-verde:#00ad2b;
+$cor-cinza:#777676;
+$cor-clara:#efefef;
+$font-exo:'Exo',sans-serif;
+$font-abel:'Abel',sans-serif;
 
-  &__title {
-    color: white;
-  }
+body{ font-family:$font-exo; background-color:#fafafa; font-weight:normal; color:$cor-cinza }
+body.on{ overflow:hidden; height:100vh; }
+p{ font-size:15px; font-weight:400; color:$cor-cinza; line-height:1.5; margin:0; text-rendering:optimizeLegibility }
+ul, ol{ padding:0; margin:0 }
+a{ text-decoration:none; color:$cor-cinza }
+a:focus, img:focus, input:focus, select:focus, button:focus, textarea:focus{ outline:0; }
+h1,h2,h3,h4,h5,h6{ font-weight:700; margin:0 }
+input[type="text"]{ color:$cor-cinza; height:40px; border:2px solid #cfcfcf; background:#fff; padding:0 10px; font-size:16px; box-shadow:none; border-radius:10px; transition:all .25s ease } 
+input[type="text"]:focus, input[type="text"]:active{ border-color:#afafaf }
+input[type="submit"]{ height:40px; padding:0 25px; text-transform:uppercase; border-width:2px; border-style:solid; border-color:#6a6a6a; box-shadow:none; background:$cor-clara; border-radius:10px; margin:0; cursor:pointer; transition:all .25s ease }
+input[type="submit"]:hover{ background:#6a6a6a; color:#fff }
 
-  &__img {
-    border: 1px solid #eee;
-    border-radius: 5px;
-  }
+.container{ position:relative }
+
+.titulo{ font-family:$font-abel; font-size:38px; color:#aaa9a9; text-transform:uppercase; letter-spacing:-1px; font-weight:700; font-style:normal; line-height:1.2; position:relative; text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale }
+
+.botao{ padding:0 6px 0 24px; height:30px; line-height:29px; margin-left:6px; border-width:2px; border-radius:10px; font-weight:600; border-style:solid; font-size:12px; background-color:$cor-clara; background-position:7px center; background-size:14px auto; background-repeat:no-repeat; cursor:pointer; overflow:hidden; transition:all .25s ease;
+	&:hover, &:active{ color:#fff }
+	&-excluir{ border-color:$cor-vermelho; color:$cor-vermelho; background-image:url(../src/icons/icon-excluir-ver.png) }
+	&-excluir:hover, &-excluir:active{ background-image:url(../src/icons/icon-excluir-brc.png); background-color:$cor-vermelho }
+	&-editar{ border-color:$cor-azul; color:$cor-azul; background-image:url(../src/icons/icon-editar-azu.png) }
+	&-editar:hover, &-editar:active{ background-image:url(../src/icons/icon-editar-brc.png); background-color:$cor-azul }
+	&-concluir{ border-color:$cor-verde; color:$cor-verde; background-image:url(../src/icons/icon-concluir-vrd.png) }
+	&-concluir:hover, &-concluir:active{ background-image:url(../src/icons/icon-concluir-brc.png); background-color:$cor-verde }
+}
+
+.principal{ display:flex; flex-direction:column; align-items:center; justify-content:center; height:auto; min-height:100vh; padding:20px 0;
+	.titulo{ margin:0 0 20px }
+}
+
+.conteudo{ padding:40px 40px 30px; background-color:$cor-clara; border-radius:10px; width:720px; max-width:100% }
+	
+.quantidade{ margin:10px 0 }
+.quantidade p{ font-size:12px }
+
+.form{ display:flex; justify-content:space-between; flex-direction:row }
+.form input[type="text"]{ flex:1; margin-right:10px }
+
+#editar{ display:none }
+.editar{ margin:10px 0 0 }
+.editar form{ display:flex; justify-content:space-between; flex-direction:row; justify-content:center }
+.editar input[type="text"]{ flex:1; margin-right:10px }
+.editar a.fechar{ height:40px; width:40px; font-size:20px; font-weight:600; line-height:40px; text-align:center; color:$cor-vermelho; cursor:pointer; margin-left:5px }
+.editar a.fechar:hover, .editar a.fechar:active, .editar a.fechar:focus{ color:$cor-vermelho }
+
+.dados{ margin-top:30px }
+.dados-item{ display:flex; justify-content:space-between; flex-direction:row; justify-content:center; padding:10px 0; border-top:1px solid #dfdfdf }
+.dados-item:first-child{ border:0 }
+.dados-item .titulo{ flex:1; font-size:20px; text-transform:none; margin:0; letter-spacing:0.5px; color:$cor-cinza; line-height:1.1 }
+.dados-item.concluido .botao-concluir{ background-image:url(../src/icons/icon-concluir-brc.png); background-color:$cor-verde; color:#fff }
+
+
+@media screen and (max-width:575px){
+	.botao{ text-indent:-9999px; padding-left:10px; padding-right:10px; width:40px; background-position:center }
 }

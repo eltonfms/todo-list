@@ -1,51 +1,38 @@
+<!DOCTYPE html>
 <html lang="">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="">
-<title>TODO List</title>
+<title>TODO List - Compras da Manhã</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
 <meta name="format-detection" content="telephone=no">
-<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Abel|Exo:400,600,700" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link href="css/style.min.css?ver=1.0" rel="stylesheet">
 </head>
 <body>
-<header class="cabecalho">
-	<h2>TODO List</h2>
-</header>
 <main class="principal">
-	<table>
-		<thead>
-			<tr>
-				<th>Dados</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Valores</td>
-				<td>Valores</td>
-				<td><button type="button" class="btn btn-success">Atualizar</button></td>
-				<td><button type="button" class="btn btn-danger">Excluir</button></td>
-			</tr>
-			<tr>
-				<td>Valores</td>
-				<td>Valores</td>
-				<td><button type="button" class="btn btn-success">Atualizar</button></td>
-				<td><button type="button" class="btn btn-danger">Excluir</button></td>
-			</tr>
-			<tr>
-				<td>Valores</td>
-				<td>Valores</td>
-				<td><button type="button" class="btn btn-success">Atualizar</button></td>
-				<td><button type="button" class="btn btn-danger">Excluir</button></td>>
-			</tr>
-		</tbody>
-	</table>
+	<h1 class="titulo">Compras da Manhã</h1>
+	<section class="conteudo">
+		<form class="form" action="javascript:void(0);" method="POST" onsubmit="app.Add()"> 
+			<input type="text" id="add-task" placeholder="Insira sua tarefa">
+			<input type="submit" value="Inserir">
+		</form>
+		<div class="quantidade">
+			<p><span id="comprados">Nenhuma tarefa completa</span> de <span id="counter"></span> cadastradas.</p>
+		</div>
+		<div id="editar" role="aria-hidden" class="editar">
+			<form action="javascript:void(0);" method="POST" id="saveEdit">
+				<input type="text" id="edit-task">
+				<input type="submit" value="Salvar">
+				<a onclick="CloseInput()" aria-label="Fechar" class="fechar">&#10006;</a>
+			</form>
+		</div>
+		<div class="dados">
+			<div id="tarefas"></div>
+		</div>
+	</section>
 </main>
-<footer class="rodape">
-</footer>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script src="src/js/scripts.js"></script>
 </body>
 </html>
