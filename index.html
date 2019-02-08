@@ -1,38 +1,31 @@
 <!DOCTYPE html>
-<html lang="">
+<html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="">
-<title>TODO List - Compras da Manhã</title>
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
-<meta name="format-detection" content="telephone=no">
-<link href="https://fonts.googleapis.com/css?family=Abel|Exo:400,600,700" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link href="css/style.min.css?ver=1.0" rel="stylesheet">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>To Do</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{ font-family:Helvetica,sans-serif,Arial; }
+.app{ margin:50px; max-width:500px; }
+.app div{ display:flex; justify-content:space-between; margin-top:20px; }
+h2{ font-size:20px; color:#6a6a6a; margin:0 0 30px; }
+ul{ list-style-type:none; padding:0; }
+li{ margin:0 0 10px; border-bottom:1px solid #dadada; padding-bottom:8px; display:flex; justify-content:space-between; font-size:14px; width:100%;
+}
+input{ height:34px; border:1px solid #aaa; width:280px; max-width:70%; padding:0 10px; color:#4a4a4a; border-radius:0; }
+button{ background:none; border:0; color:red; font-weight:700; cursor:pointer; padding:5px 0; }
+</style>
 </head>
 <body>
-<main class="principal">
-	<h1 class="titulo">Compras da Manhã</h1>
-	<section class="conteudo">
-		<form class="form" action="javascript:void(0);" method="POST" onsubmit="app.Add()"> 
-			<input type="text" id="add-task" placeholder="Insira sua tarefa">
-			<input type="submit" value="Inserir">
-		</form>
-		<div class="quantidade">
-			<p><span id="comprados">Nenhuma tarefa completa</span> de <span id="counter"></span> cadastradas.</p>
-		</div>
-		<div id="editar" role="aria-hidden" class="editar">
-			<form action="javascript:void(0);" method="POST" id="saveEdit">
-				<input type="text" id="edit-task">
-				<input type="submit" value="Salvar">
-				<a onclick="CloseInput()" aria-label="Fechar" class="fechar">&#10006;</a>
-			</form>
-		</div>
-		<div class="dados">
-			<div id="tarefas"></div>
-		</div>
-	</section>
-</main>
-<script src="src/js/scripts.js"></script>
+    <div id="app" class="app">
+        <h2>App To Do</h2>
+        <ul></ul>
+        <div>
+            <input type="text" placeholder="Digite uma tarefa">
+            <button>Adicionar</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
 </body>
 </html>
